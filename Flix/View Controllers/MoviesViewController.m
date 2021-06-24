@@ -36,6 +36,8 @@
     
     [self.activityIndicator startAnimating];
     
+    
+    
 }
 
 //Function that calls the GET API method to get the list of now playing movies
@@ -46,18 +48,21 @@
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             //If the API call returned an error, print out the error message
            if (error != nil) {
-               NSLog(@"%@", [error localizedDescription]);
+               [self showCannotGetMoviesAlert];
+               //NSLog(@"%@", [error localizedDescription]);
+           
+              
            }
         //If API call successful, add the movie results into the array
            else {
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-               NSLog(@"%@", dataDictionary);
+               //NSLog(@"%@", dataDictionary);
                
                self.movies = dataDictionary[@"results"];
-               for (NSDictionary *movie in self.movies){
+               /*for (NSDictionary *movie in self.movies){
                    NSLog(@"%@", movie[@"title"]);
                    
-               }
+               }*/
                [self.tableView reloadData];
                // TODO: Get the array of movies
                // TODO: Store the movies in a property to use elsewhere
@@ -67,6 +72,25 @@
         [self.activityIndicator stopAnimating];
        }];
     [task resume];
+}
+
+- (void) showCannotGetMoviesAlert{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Cannot Get Movies"
+                                                                               message:@"The internet connection appears to be offline."
+                                                                        preferredStyle:(UIAlertControllerStyleAlert)];
+    // create a Try Again action
+    UIAlertAction *tryAgainAction = [UIAlertAction actionWithTitle:@"Try Again"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {
+                                                             // handle response here.
+                                                                [self fetchMovies];
+                                                }];
+    // add the Try Again action to the alert controller
+    [alert addAction:tryAgainAction];
+    
+    [self presentViewController:alert animated:YES completion:^{
+        // optional code for what happens after the alert controller has finished presenting
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
