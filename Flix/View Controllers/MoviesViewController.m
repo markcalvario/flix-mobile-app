@@ -49,31 +49,22 @@
             //If the API call returned an error, print out the error message
            if (error != nil) {
                [self showCannotGetMoviesAlert];
-               //NSLog(@"%@", [error localizedDescription]);
            
               
            }
         //If API call successful, add the movie results into the array
            else {
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-               //NSLog(@"%@", dataDictionary);
                
                self.movies = dataDictionary[@"results"];
-               /*for (NSDictionary *movie in self.movies){
-                   NSLog(@"%@", movie[@"title"]);
-                   
-               }*/
                [self.tableView reloadData];
-               // TODO: Get the array of movies
-               // TODO: Store the movies in a property to use elsewhere
-               // TODO: Reload your table view data
            }
         [self.refreshControl endRefreshing];
         [self.activityIndicator stopAnimating];
        }];
     [task resume];
 }
-
+// --------- Method that gets called when there is a network error so that an alert pops up ------------
 - (void) showCannotGetMoviesAlert{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Cannot Get Movies"
                                                                                message:@"The internet connection appears to be offline."
