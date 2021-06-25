@@ -54,7 +54,7 @@
                                             <outlet property="posterView" destination="Hhs-YP-WjB" id="OOp-jh-Pln"/>
                                             <outlet property="synopsisLabel" destination="eXs-Zi-E7p" id="8xP-jI-MJi"/>
                                             <outlet property="titleLabel" destination="avq-Hi-U6v" id="8SD-Qr-9Rq"/>
-                                            <segue destination="OVp-pz-Xpn" kind="show" id="KPU-Kv-qzk"/>
+                                            <segue destination="OVp-pz-Xpn" kind="show" identifier="LatestMovieToDetailView" id="KPU-Kv-qzk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -91,28 +91,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="qtW-a1-bBO">
-                                    <size key="itemSize" width="157" height="216"/>
+                                    <size key="itemSize" width="158" height="216"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCollectionCell" id="fKJ-0R-8ew" customClass="MovieCollectionCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="157" height="216"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="158" height="216"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Gy3-bK-oWp">
-                                            <rect key="frame" x="0.0" y="0.0" width="157" height="216"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="158" height="216"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="se8-8P-12g">
-                                                    <rect key="frame" x="2" y="0.0" width="153" height="216"/>
+                                                    <rect key="frame" x="2" y="0.0" width="154" height="216"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="157" height="216"/>
+                                        <size key="customSize" width="158" height="216"/>
                                         <connections>
                                             <outlet property="posterView" destination="se8-8P-12g" id="AoG-bI-gPf"/>
+                                            <segue destination="OVp-pz-Xpn" kind="show" identifier="SuperheroMovieToDetailView" id="frC-QW-dSx"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -130,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="1911.594202898551" y="952.90178571428567"/>
         </scene>
-        <!--Details View Controller-->
+        <!--Movie Details-->
         <scene sceneID="i8r-Yg-y88">
             <objects>
                 <viewController id="OVp-pz-Xpn" customClass="DetailsViewController" sceneMemberID="viewController">
@@ -150,17 +151,17 @@
                                         <rect key="frame" x="19" y="161" width="109" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYg-pp-maA">
-                                        <rect key="frame" x="19" y="339" width="360" height="229"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrS-8L-pB3">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="CrS-8L-pB3">
                                         <rect key="frame" x="151" y="258" width="228" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYg-pp-maA">
+                                        <rect key="frame" x="19" y="352" width="360" height="229"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -172,7 +173,7 @@
                         <viewLayoutGuide key="safeArea" id="Idi-AZ-FYl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gOE-Bc-zY3"/>
+                    <navigationItem key="navigationItem" title="Movie Details" id="gOE-Bc-zY3"/>
                     <connections>
                         <outlet property="backdropView" destination="V1q-al-nmH" id="TOT-8d-nl6"/>
                         <outlet property="posterView" destination="ytZ-M3-zXU" id="f9J-hc-NKf"/>
@@ -239,6 +240,9 @@
             <point key="canvasLocation" x="1913" y="102"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="frC-QW-dSx"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>

@@ -46,6 +46,10 @@
     [self.backdropView setImageWithURL: backdropURL];
     
     self.titleLabel.text = self.movie[@"title"];
+    
+    self.titleLabel.adjustsFontSizeToFitWidth = true;
+    self.titleLabel.minimumScaleFactor = 0.2;
+    
     self.synopsisLabel.text = self.movie[@"overview"];
     
     [self.titleLabel sizeToFit];

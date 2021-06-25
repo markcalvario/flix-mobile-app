@@ -8,6 +8,7 @@
 #import "MoviesGridViewController.h"
 #import "MovieCollectionCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "DetailsViewController.h"
 
 @interface MoviesGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, strong) NSArray *movies;
@@ -34,7 +35,7 @@
     
     
     CGFloat postersPerLine = 2;
-    CGFloat posterWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing *(postersPerLine-1))/ postersPerLine;
+    CGFloat posterWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing *(postersPerLine-1) ) / postersPerLine;
     CGFloat posterHeight = posterWidth * 1.5;
     layout.itemSize = CGSizeMake(posterWidth, posterHeight);
 }
@@ -60,15 +61,25 @@
        }];
     [task resume];
 }
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    
+    MovieCollectionCell *tappedCell = sender;
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell: tappedCell];
+    NSDictionary *movie = self.movies[indexPath.row];
+    
+    DetailsViewController *detailsViewController = [segue destinationViewController];
+    
+    detailsViewController.movie = movie;
+    
 }
-*/
+
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     MovieCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCollectionCell" forIndexPath:indexPath];
