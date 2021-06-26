@@ -42,7 +42,11 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://imgur.com/J5m6DJx.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='https://user-images.githubusercontent.com/58496944/123499946-3b140580-d5ef-11eb-9b26-88f1caa2cbf6.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='https://user-images.githubusercontent.com/58496944/123499909-d6f14180-d5ee-11eb-8b2d-c2861a6ed760.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src = 'https://user-images.githubusercontent.com/58496944/123500017-c1c8e280-d5ef-11eb-8cce-3a81f4257a73.gif'  title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
 
 GIF created with [Kap](https://getkap.co/).
 
