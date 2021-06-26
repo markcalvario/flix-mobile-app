@@ -6,6 +6,8 @@
 //
 
 #import "SearchBarTableViewViewController.h"
+#import "MovieCell.h"
+#import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "SearchMovieCell.h"
 #import <objc/runtime.h>
@@ -51,13 +53,32 @@
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                
                self.filteredData = dataDictionary[@"results"];
+               [self checkForPosterAndBackdropImage];
                [self.movieTableView reloadData];
            }
   
        }];
     [task resume];
 }
-
+-(void) checkForPosterAndBackdropImage{
+    for (NSInteger i = self.filteredData.count - 1; i >= 0 ; i--) {
+        NSDictionary *movie = self.filteredData[i];
+        NSString *posterURLString = movie[@"poster_path"];
+        NSString *backdropURLString = movie[@"backdrop_path"];
+        
+        if ( (posterURLString == (id)[NSNull null] || posterURLString.length == 0 )){
+            [self.filteredData removeObjectAtIndex:i];
+            
+        }
+        else if( (backdropURLString == (id)[NSNull null] || backdropURLString.length == 0)){
+            [self.filteredData removeObjectAtIndex:i];
+        }
+        
+        
+    }
+    
+    
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.filteredData.count;
@@ -73,6 +94,8 @@
     
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = movie[@"poster_path"];
+    
+    
     if (! (posterURLString == (id)[NSNull null] || posterURLString.length == 0 )){
         NSString *fullPosterURLString = [baseURLString stringByAppendingString: posterURLString ];
         NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
@@ -109,4 +132,19 @@
     [self.movieSearchBar resignFirstResponder];
 }
 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    
+    MovieCell *tappedCell = sender;
+    NSIndexPath *indexPath = [self.movieTableView indexPathForCell: tappedCell];
+    NSDictionary *movie = self.filteredData[indexPath.row];
+    
+    DetailsViewController *detailsViewController = [segue destinationViewController];
+    
+    detailsViewController.movie = movie;
+    
+}
 @end

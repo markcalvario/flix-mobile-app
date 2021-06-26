@@ -181,6 +181,7 @@
                                             <outlet property="movieLabel" destination="17y-9g-iqS" id="p8B-b4-nfT"/>
                                             <outlet property="moviePosterImage" destination="qv0-Vj-ePY" id="T9F-GM-sQf"/>
                                             <outlet property="synopsisLabel" destination="d8B-hT-ydl" id="Twn-DZ-ekL"/>
+                                            <segue destination="OVp-pz-Xpn" kind="show" identifier="SearchMovieToMovieDetails" id="mft-0X-nI1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -327,7 +328,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KPU-Kv-qzk"/>
+        <segue reference="mft-0X-nI1"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
