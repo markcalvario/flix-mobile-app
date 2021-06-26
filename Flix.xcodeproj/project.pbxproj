@@ -12,6 +12,8 @@
 		5F745BD928A2F7AE714258EA /* Pods_Flix_FlixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C3AD4CEA57A918FA641F42 /* Pods_Flix_FlixUITests.framework */; };
 		D01E6DF126854B7A0099BD23 /* MoviesGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01E6DF026854B7A0099BD23 /* MoviesGridViewController.m */; };
 		D01E6DF426854FCE0099BD23 /* MovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D01E6DF326854FCE0099BD23 /* MovieCollectionCell.m */; };
+		D01E6DF7268676D00099BD23 /* SearchBarTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01E6DF6268676D00099BD23 /* SearchBarTableViewViewController.m */; };
+		D01E6DFA26869A610099BD23 /* SearchMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D01E6DF926869A610099BD23 /* SearchMovieCell.m */; };
 		D0DED45F268391F700AED0CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DED45E268391F700AED0CC /* AppDelegate.m */; };
 		D0DED462268391F700AED0CC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DED461268391F700AED0CC /* SceneDelegate.m */; };
 		D0DED468268391F700AED0CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DED466268391F700AED0CC /* Main.storyboard */; };
@@ -53,6 +55,10 @@
 		D01E6DF026854B7A0099BD23 /* MoviesGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesGridViewController.m; sourceTree = "<group>"; };
 		D01E6DF226854FCE0099BD23 /* MovieCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCollectionCell.h; sourceTree = "<group>"; };
 		D01E6DF326854FCE0099BD23 /* MovieCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCollectionCell.m; sourceTree = "<group>"; };
+		D01E6DF5268676D00099BD23 /* SearchBarTableViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBarTableViewViewController.h; sourceTree = "<group>"; };
+		D01E6DF6268676D00099BD23 /* SearchBarTableViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBarTableViewViewController.m; sourceTree = "<group>"; };
+		D01E6DF826869A610099BD23 /* SearchMovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchMovieCell.h; sourceTree = "<group>"; };
+		D01E6DF926869A610099BD23 /* SearchMovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchMovieCell.m; sourceTree = "<group>"; };
 		D0C3AD4CEA57A918FA641F42 /* Pods_Flix_FlixUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flix_FlixUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0DED45A268391F700AED0CC /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0DED45D268391F700AED0CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -198,6 +204,8 @@
 				D0DED49F2683E4C700AED0CC /* DetailsViewController.m */,
 				D01E6DEF26854B7A0099BD23 /* MoviesGridViewController.h */,
 				D01E6DF026854B7A0099BD23 /* MoviesGridViewController.m */,
+				D01E6DF5268676D00099BD23 /* SearchBarTableViewViewController.h */,
+				D01E6DF6268676D00099BD23 /* SearchBarTableViewViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -209,6 +217,8 @@
 				D0DED4992683D04900AED0CC /* MovieCell.m */,
 				D01E6DF226854FCE0099BD23 /* MovieCollectionCell.h */,
 				D01E6DF326854FCE0099BD23 /* MovieCollectionCell.m */,
+				D01E6DF826869A610099BD23 /* SearchMovieCell.h */,
+				D01E6DF926869A610099BD23 /* SearchMovieCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -450,7 +460,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D01E6DFA26869A610099BD23 /* SearchMovieCell.m in Sources */,
 				D0DED45F268391F700AED0CC /* AppDelegate.m in Sources */,
+				D01E6DF7268676D00099BD23 /* SearchBarTableViewViewController.m in Sources */,
 				D0DED49A2683D04900AED0CC /* MovieCell.m in Sources */,
 				D0DED49426839BF800AED0CC /* MoviesViewController.m in Sources */,
 				D0DED4A02683E4C700AED0CC /* DetailsViewController.m in Sources */,
