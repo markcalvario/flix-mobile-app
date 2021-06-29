@@ -46,7 +46,8 @@ Here's a walkthrough of implemented user stories:
 <img src='https://user-images.githubusercontent.com/58496944/123499946-3b140580-d5ef-11eb-9b26-88f1caa2cbf6.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 <img src='https://user-images.githubusercontent.com/58496944/123499909-d6f14180-d5ee-11eb-8b2d-c2861a6ed760.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 <img src = 'https://user-images.githubusercontent.com/58496944/123500017-c1c8e280-d5ef-11eb-8cce-3a81f4257a73.gif'  title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-
+<img src = 'https://user-images.githubusercontent.com/58496944/123743975-ed073800-d862-11eb-8ec1-a82a5bb172b3.gif'  title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src = 'https://user-images.githubusercontent.com/58496944/123744319-728ae800-d863-11eb-988c-cdb3580b4f9c.gif'  title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/).
 
